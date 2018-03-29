@@ -56,8 +56,28 @@ setTimeout(DoRotateY0, 600);
 document.getElementById('myGacha').style.display = "none";
 var Coin = 300;
 document.getElementById('coin').value -= Coin;
-
-var IRandom = Math.floor(Math.random() * 101) + 1;
+var ihard = Math.floor(Math.random() * 5) + 1;
+if (ihard == 1)
+{
+	ihard = 70;
+}
+else if (ihard == 2)
+{
+	ihard = 85;
+}
+else if (ihard == 3)
+{
+	ihard = 95;
+}
+else if (ihard == 4)
+{
+	ihard = 100;
+}
+else if (ihard == 5)
+{
+	ihrad = 101;
+}
+var IRandom = Math.floor(Math.random() * ihard) + 1;
 if (IRandom > 100)
 {
 Result = "คุณได้รับ ULR ";
@@ -96,7 +116,28 @@ setTimeout(DoRotateY180, 0);
 setTimeout(DoRotateY0, 600);
 document.getElementById('myGacha').style.display = "none";
 
-var IRandom = Math.floor(Math.random() * 101) + 1;
+var ihard = Math.floor(Math.random() * 5) + 1;
+if (ihard == 1)
+{
+	ihard = 70;
+}
+else if (ihard == 2)
+{
+	ihard = 85;
+}
+else if (ihard == 3)
+{
+	ihard = 95;
+}
+else if (ihard == 4)
+{
+	ihard = 100;
+}
+else if (ihard == 5)
+{
+	ihrad = 101;
+}
+var IRandom = Math.floor(Math.random() * ihard) + 1;
 if (IRandom > 100)
 {
 Result = "คุณได้รับ ULR ";
