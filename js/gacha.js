@@ -1,6 +1,7 @@
 /*                           Field                           */
 var Per = 0;
 var Per2 = 0;
+var PerULR = 0;
 
 var StoneX = 0;
 var StoneSSS = 0;
@@ -270,6 +271,7 @@ function CloseModal()
 {
 	if (GachaBox == 0)
 	{
+		DoAlpha();
         myModal.style.display = "none";
         myGacha.style.display = "block";
 	}
@@ -428,29 +430,46 @@ function RandomGacha()
 		var IRandom = Math.floor(Math.random() * Per) + Per2;
 		if (IRandom > 100)
 		{
-			Result = "คุณได้รับ ULR ";
-			setTimeout(PopupULR, 1000);
+			PerULR += 1;
+			if (PerULR > 100)
+			{
+				Result = "คุณได้รับ ULR ";
+				setTimeout(PopupULR, 1000);
+				GaULR += 1;
+				PerULR = 0;
+			}
+			else
+			{			
+				Result = "เกลือ ";
+				setTimeout(PopupS, 1000);
+				Gs += 1;
+			}
 		}
 		else if (IRandom < 101 && IRandom > 97)
 		{
 			Result = "คุณได้รับ SSR ";
 			setTimeout(PopupSSR, 1000);
+			GaSSR += 1;
 		}
 		else if (IRandom < 98 && IRandom > 94)
 		{
 			Result = "คุณได้รับ SR ";
 			setTimeout(PopupSR, 1000);
+			GaSR += 1;
 		}
 		else if (IRandom < 95 && IRandom > 85)
 		{
 			Result = "คุณได้รับ S ";
 			setTimeout(PopupSG, 1000);
+			GaS += 1;
 		}
 		else if (IRandom <= 86)
 		{
 			Result = "เกลือ ";
 			setTimeout(PopupS, 1000);
+			Gs += 1;
 		}
+		setTimeout(DoAddGachaText, 2000);
 	}
 	else
 	{
@@ -551,30 +570,71 @@ function RandomGacha10()
 	var IRandom = Math.floor(Math.random() * Per) + Per2;
 	if (IRandom > 100)
 	{
-		Result = "คุณได้รับ ULR ";
-		setTimeout(PopupULR, 1000);
-		GaULR += 1;
+		PerULR += 1;
+		if (PerULR > 50)
+		{
+			Result = "คุณได้รับ ULR ";
+			setTimeout(PopupULR, 1000);
+			GaULR += 1;
+		}
+		else
+		{			
+			Result = "เกลือ ";
+			setTimeout(PopupS, 1000);
+			Gs += 1;
+		}
 	}
 	else if (IRandom < 101 && IRandom > 97)
 	{
-		Result = "คุณได้รับ SSR ";
-		setTimeout(PopupSSR, 1000);
-		GaSSR += 1;
+		PerULR += 1;
+		if (PerULR > 40)
+		{
+			Result = "คุณได้รับ SSR ";
+			setTimeout(PopupSSR, 1000);
+			GaSSR += 1;
+		}
+		else
+		{			
+			Result = "เกลือ ";
+			setTimeout(PopupS, 1000);
+			Gs += 1;
+		}
 	}
 	else if (IRandom < 98 && IRandom > 94)
 	{
-		Result = "คุณได้รับ SR ";
-		setTimeout(PopupSR, 1000);
-		GaSR += 1;
+		PerULR += 1;
+		if (PerULR > 30)
+		{
+			Result = "คุณได้รับ SR ";
+			setTimeout(PopupSR, 1000);
+			GaSR += 1;
+		}
+		else
+		{			
+			Result = "เกลือ ";
+			setTimeout(PopupS, 1000);
+			Gs += 1;
+		}
 	}
 	else if (IRandom < 95 && IRandom > 85)
 	{
-		Result = "คุณได้รับ S ";
-		setTimeout(PopupSG, 1000);
-		GaS += 1;
+		PerULR += 1;
+		if (PerULR > 20)
+		{
+			Result = "คุณได้รับ S ";
+			setTimeout(PopupSG, 1000);
+			GaS += 1;
+		}
+		else
+		{			
+			Result = "เกลือ ";
+			setTimeout(PopupS, 1000);
+			Gs += 1;
+		}
 	}
 	else if (IRandom <= 86)
 	{
+		PerULR += 1;
 		Result = "เกลือ ";
 		setTimeout(PopupS, 1000);
 		Gs += 1;
@@ -989,7 +1049,31 @@ window.onclick = function(event){
     }
     else
     {
-        DoAlphaNone();
+		var b1 = document.getElementsByClassName('storeGacha')[0];
+		var b2 = document.getElementsByClassName('storeGachaS')[0];
+		var b3 = document.getElementsByClassName('storeGachaSR')[0];
+		var b4 = document.getElementsByClassName('storeGachaSSR')[0];
+		var b5 = document.getElementsByClassName('storeGachaULR')[0];
+		if (event.target == b1)
+		{
+			DoAlphaNone();
+		}
+		if (event.target == b2)
+		{
+			DoAlphaNone();
+		}
+		if (event.target == b3)
+		{
+			DoAlphaNone();
+		}
+		if (event.target == b4)
+		{
+			DoAlphaNone();
+		}
+		if (event.target == b5)
+		{
+			DoAlphaNone();
+		}
     }
 }
 
