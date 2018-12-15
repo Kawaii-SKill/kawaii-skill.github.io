@@ -335,13 +335,22 @@ function DoRotateY0(){
 gachaimg.style.transform = "rotateY(0deg)";
 }
 
+function gaAnim0() {
+gachaimg.setAttribute("class", "gachapong gachaupdown");
+}
+function gaAnim1() {
+gachaimg.setAttribute("class", "gachapong");
+}
+
 /* Random */
 function RandomGacha()
 {
 	if (Number(mycoin.value) >= 300)
 	{
-		setTimeout(DoRotateY180, 0);
+	    gaAnim1();
+	    setTimeout(DoRotateY180, 0);
 		setTimeout(DoRotateY0, 600);
+		setTimeout(gaAnim0, 1200);
 		myGacha.style.display = "none";
 		UseCoin("300");
 		
@@ -372,66 +381,90 @@ function RandomGacha()
 		/*Stone X*/
 		if (StoneX > 0)
 		{
-			Per = 20;
-			Per2 = 86;
+			Per = 40;
+			Per2 = 100;
 			StoneX -= 1;
 			UseStone("X");
 		}
 		/*Stone SSS*/
 		if (StoneSSS > 0)
 		{
-			Per = 20;
-			Per2 = 80;
+			Per = 40;
+			Per2 = 95;
 			StoneSSS -= 1;
 			UseStone("SSS");
 		}
 		/*Stone SS*/
 		if (StoneSS > 0)
 		{
-			Per = 20;
-			Per2 = 78;
+			Per = 40;
+			Per2 = 90;
 			StoneSS -= 1;
 			UseStone("SS");
 		}
 		/*Stone S*/
 		if (StoneS > 0)
 		{
-			Per = 20;
-			Per2 = 75;
+			Per = 40;
+			Per2 = 85;
 			StoneS -= 1;
 			UseStone("S");
 		}
 		/*Stone A*/
 		if (StoneA > 0)
 		{
-			Per = 20;
-			Per2 = 70;
+			Per = 40;
+			Per2 = 80;
 			StoneA -= 1;
 			UseStone("A");
 		}
 		/*Stone B*/
 		if (StoneB > 0)
 		{
-			Per = 20;
-			Per2 = 68;
+			Per = 40;
+			Per2 = 75;
 			StoneB -= 1;
 			UseStone("B");
 		}
 		/*Stone C*/
 		if (StoneC > 0)
 		{
-			Per = 20;
-			Per2 = 67;
+			Per = 40;
+			Per2 = 70;
 			StoneC -= 1;
 			UseStone("C");
 		}
 		/* End Stone*/
 		
 		var IRandom = Math.floor(Math.random() * Per) + Per2;
-		if (IRandom > 100)
+		if (IRandom > 50)
+		{
+		  Result = "เกลือ ";
+		  setTimeout(PopupS, 1000);
+		  Gs += 1;
+		}
+		else if (IRandom < 49)
+		{
+		  Result = "คุณได้รับ S ";
+		  setTimeout(PopupSG, 1000);
+		  GaS += 1;
+		}
+		else if (IRandom < 93)
+		{
+		  Result = "คุณได้รับ SR ";
+		  setTimeout(PopupSR, 1000);
+		  GaSR += 1;
+		}
+		else if (IRandom < 95)
+		{
+		  Result = "คุณได้รับ SSR ";
+		  setTimeout(PopupSSR, 1000);
+		  GaSSR += 1;
+		}
+		else if (IRandom < 98)
 		{
 			PerULR += 1;
-			if (PerULR > 100)
+			if (PerULR > 5)
 			{
 				Result = "คุณได้รับ ULR ";
 				setTimeout(PopupULR, 1000);
@@ -445,30 +478,6 @@ function RandomGacha()
 				Gs += 1;
 			}
 		}
-		else if (IRandom < 101 && IRandom > 97)
-		{
-			Result = "คุณได้รับ SSR ";
-			setTimeout(PopupSSR, 1000);
-			GaSSR += 1;
-		}
-		else if (IRandom < 98 && IRandom > 94)
-		{
-			Result = "คุณได้รับ SR ";
-			setTimeout(PopupSR, 1000);
-			GaSR += 1;
-		}
-		else if (IRandom < 95 && IRandom > 85)
-		{
-			Result = "คุณได้รับ S ";
-			setTimeout(PopupSG, 1000);
-			GaS += 1;
-		}
-		else if (IRandom <= 86)
-		{
-			Result = "เกลือ ";
-			setTimeout(PopupS, 1000);
-			Gs += 1;
-		}
 		setTimeout(DoAddGachaText, 2000);
 	}
 	else
@@ -480,9 +489,10 @@ function RandomGacha()
 function RandomGacha10()
 {
 	document.getElementsByClassName("close")[0].style.display = "none";
-	
+	gaAnim1();
 	setTimeout(DoRotateY180, 0);
 	setTimeout(DoRotateY0, 600);
+	setTimeout(gaAnim0, 1200);
 	myGacha.style.display = "none";
 
 	var ihard = Math.floor(Math.random() * 5) + 1;
@@ -512,132 +522,102 @@ function RandomGacha10()
 	/*Stone X*/
 	if (StoneX > 0)
 	{
-		Per = 20;
-		Per2 = 86;
+		Per = 40;
+		Per2 = 100;
 		StoneX -= 1;
 		UseStone("X");
 	}
 	/*Stone SSS*/
 	if (StoneSSS > 0)
 	{
-		Per = 20;
-		Per2 = 80;
+		Per = 40;
+		Per2 = 95;
 		StoneSSS -= 1;
 		UseStone("SSS");
 	}
 	/*Stone SS*/
 	if (StoneSS > 0)
 	{
-		Per = 20;
-		Per2 = 78;
+		Per = 40;
+		Per2 = 90;
 		StoneSS -= 1;
 		UseStone("SS");
 	}
 	/*Stone S*/
 	if (StoneS > 0)
 	{
-		Per = 20;
-		Per2 = 75;
+		Per = 40;
+		Per2 = 85;
 		StoneS -= 1;
 		UseStone("S");
 	}
 	/*Stone A*/
 	if (StoneA > 0)
 	{
-		Per = 20;
-		Per2 = 70;
+		Per = 40;
+		Per2 = 80;
 		StoneA -= 1;
 		UseStone("A");
 	}
 	/*Stone B*/
 	if (StoneB > 0)
 	{
-		Per = 20;
-		Per2 = 68;
+		Per = 40;
+		Per2 = 75;
 		StoneB -= 1;
 		UseStone("B");
 	}
 	/*Stone C*/
 	if (StoneC > 0)
 	{
-		Per = 20;
-		Per2 = 67;
+		Per = 40;
+		Per2 = 70;
 		StoneC -= 1;
 		UseStone("C");
 	}
 	/* End Stone*/
 	
 	var IRandom = Math.floor(Math.random() * Per) + Per2;
-	if (IRandom > 100)
+	if (IRandom > 50)
 	{
-		PerULR += 1;
-		if (PerULR > 50)
-		{
-			Result = "คุณได้รับ ULR ";
-			setTimeout(PopupULR, 1000);
-			GaULR += 1;
-		}
-		else
-		{			
-			Result = "เกลือ ";
-			setTimeout(PopupS, 1000);
-			Gs += 1;
-		}
+	  Result = "เกลือ ";
+	  setTimeout(PopupS, 1000);
+	  Gs += 1;
 	}
-	else if (IRandom < 101 && IRandom > 97)
+	else if (IRandom < 49)
 	{
-		PerULR += 1;
-		if (PerULR > 40)
-		{
-			Result = "คุณได้รับ SSR ";
-			setTimeout(PopupSSR, 1000);
-			GaSSR += 1;
-		}
-		else
-		{			
-			Result = "เกลือ ";
-			setTimeout(PopupS, 1000);
-			Gs += 1;
-		}
+	  Result = "คุณได้รับ S ";
+	  setTimeout(PopupSG, 1000);
+	  GaS += 1;
 	}
-	else if (IRandom < 98 && IRandom > 94)
+	else if (IRandom < 93)
 	{
-		PerULR += 1;
-		if (PerULR > 30)
-		{
-			Result = "คุณได้รับ SR ";
-			setTimeout(PopupSR, 1000);
-			GaSR += 1;
-		}
-		else
-		{			
-			Result = "เกลือ ";
-			setTimeout(PopupS, 1000);
-			Gs += 1;
-		}
+	  Result = "คุณได้รับ SR ";
+	  setTimeout(PopupSR, 1000);
+	  GaSR += 1;
 	}
-	else if (IRandom < 95 && IRandom > 85)
+	else if (IRandom < 95)
 	{
-		PerULR += 1;
-		if (PerULR > 20)
-		{
-			Result = "คุณได้รับ S ";
-			setTimeout(PopupSG, 1000);
-			GaS += 1;
-		}
-		else
-		{			
-			Result = "เกลือ ";
-			setTimeout(PopupS, 1000);
-			Gs += 1;
-		}
+	  Result = "คุณได้รับ SSR ";
+	  setTimeout(PopupSSR, 1000);
+	  GaSSR += 1;
 	}
-	else if (IRandom <= 86)
+	else if (IRandom < 98)
 	{
-		PerULR += 1;
-		Result = "เกลือ ";
-		setTimeout(PopupS, 1000);
-		Gs += 1;
+	  PerULR += 1;
+	  if (PerULR > 5)
+	  {
+	    Result = "คุณได้รับ ULR ";
+	    setTimeout(PopupULR, 1000);
+	    GaULR += 1;
+	    PerULR = 0;
+	  }
+	  else
+	  {			
+	    Result = "เกลือ ";
+	    setTimeout(PopupS, 1000);
+	    Gs += 1;
+	  }
 	}
 	setTimeout(DoAddGachaText, 2000);
 }
