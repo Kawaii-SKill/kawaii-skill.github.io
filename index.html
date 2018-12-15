@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Kawaii-SKill Gacha</title>
-    <meta http-equiv=X-UA-Compatible content="IE=edge">
-    <meta name=description content="Kawaii-Skill GUILD">
-    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Kawaii-Skill GUILD">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#171650">
     <meta name="msapplication-TileColor" content="#171650">
     <meta name="msapplication-TileImage" content="./images/icons/mstile-150x150.png">
@@ -30,52 +30,33 @@
   <body>
   <div class="app app__layout">
     <header>
-      <span class="header__icon">
-        <svg class="menu__icon no--select" width="24px" height="24px" viewBox="0 0 48 48" fill="#fff">
-          <path d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"></path>
-        </svg>
-      </span>
-
-      <span class="header__title no--select">Gacha</span>
-		<div class="search-container">
-		<input id="coin" type="text" placeholder="G">
+      <span class="header__icon"><svg class="menu__icon no--select" width="24px" height="24px" viewBox="0 0 48 48" fill="#fff"><path d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z"></path></svg></span>
+      <span class="header__title no--select">KS Gacha</span>
+      <div class="search-container">
+		<input id="coin" class="nose" type="text" placeholder="G" readonly>
 		<button id="getCoin" type="button">+</button>
-		</div>
+	  </div>
     </header>
-
     <div class="menu">
       <div class="menu__header"></div>
       <ul class="menu__list">
-        <li>
-          <center><a rel="noopener" href="#" id="IndexGacha">หน้าหลัก</a></center>
-        </li>
-        <li>
-          <center><a rel="noopener" href="#Gachapong" id="BoxGacha">ตู้กาชา</a></center>
-        </li>
-        <li>
-          <center><a rel="noopener" href="#Shop" id="Shop">ร้านค้า</a></center>
-        </li>
-        <li>
-          <center><a rel="noopener" href="#Inventory" id="Inventory">คลัง</a></center>
-        </li>
+        <li><center><a rel="noopener" href="#" id="IndexGacha">หน้าหลัก</a></center></li>
+        <li><center><a rel="noopener" href="#Gachapong" id="BoxGacha">ตู้กาชา</a></center></li>
+        <li><center><a rel="noopener" href="#Shop" id="Shop">ร้านค้า</a></center></li>
+        <li><center><a rel="noopener" href="#Inventory" id="Inventory">คลัง</a></center></li>
       </ul>
     </div>
     <div class="menu__overlay"></div>
-
     <div class="app__content">
-	
       <div class="card">
-        
         <div class="card__container">
-          <center><img alt="gacha" id="gachaimg" class="gachapong" src="./images/gacha.jpg"></center>
-		  
+          <center><img alt="gacha" id="gachaimg" class="gachapong gachaupdown" src="./images/gacha.jpg"></center>
 		  <div style="display: none;" class="gachabox" id="GUIgachabox">
           <center><img alt="gacha" id="gachaimg2" class="gachapong" src="./images/gachabox.jpg"></center>
 			<button class="share" style="width: 176px;background: rgb(255, 127, 38);text-shadow: 0px 0px 4px white;" id="myGachaBox" >เลือกตู้นี้</button>
           <center><img alt="gacha" id="gachaimg2" class="gachapong" src="./images/gachabox10.jpg"></center>
 			<button class="share" style="width: 176px;background: rgb(237, 27, 36);text-shadow: 0px 0px 4px white;" id="myGachaBox10" >เลือกตู้นี้</button>
 		  </div>
-		  
 		  <div class="GUIshop" id="GUIshop">
           <center><img alt="gacha" id="gachaimg2" class="gachapong" src="./images/sC.jpg"></center>
 			<button class="share" style="width: 176px;background: rgb(23, 22, 80);text-shadow: 0px 0px 4px white;" id="stoC" >หิน C</button>
@@ -92,18 +73,14 @@
           <center><img alt="gacha" id="gachaimg2" class="gachapong" src="./images/sX.jpg"></center>
 			<button class="share" style="width: 176px;background: rgb(23, 22, 80);text-shadow: 0px 0px 4px white;" id="stoX" >หิน X</button>
 		  </div>
-		  
 		  <div class="GUIinventory" id="GUIinventory">
 			<center><p style="font-size:20px;color:#fff;">รออัพเดท...</p></center>
 		  </div>
-		  
         </div>
       </div>
-
       <div class="share__container">
   		<button class="share" style="width: 176px;background: rgb(255, 200, 0);text-shadow: 0px 0px 4px white;" id="myGacha" >กดสุ่ม</button>
       </div>
-
 	  <div style="display: none;" class="storeGacha">เกลือ </div>
 	  <div style="display: none;" class="storeGachaS">S </div>
 	  <div style="display: none;" class="storeGachaSR">SR </div>
@@ -112,10 +89,7 @@
       <div class="toast__msg"></div>
     </div>
   </div>
-  
-  
 <div id="myModalStone" class="modalstone">
-
   <div class="modalstone-content">
     <span class="closeStone">&times;</span>
     <center><p>เลือกหินที่จะใช้</p></center>
@@ -130,16 +104,13 @@
 	<button class="NoStone" id="NoStone" style="background: rgb(255, 200, 0);">ไม่ใช้หิน</button>
 	</center>
   </div>
-
 </div>
-
-  <!-- Gacha Modal  -->
+<!-- Gacha Modal  -->
 <div id="myModal" class="modal">
   <span class="close">×</span>
   <img class="modal-content" id="img01">
   <div id="caption"></div>
 </div>
-
   <!-- JS Files  -->
   <script src="./js/toast.js"></script>
   <script src="./js/main.js"></script>
@@ -150,8 +121,6 @@
   <script src="./js/share.js"></script>
   <script src="./js/menu.js"></script>
   <script src="./js/gacha.js"></script>
-  
-  <!-- My Google Analytics Report -->
   <script>
 	document.body.style.backgroundImage = 'url(./images/bg.gif)';
 	document.body.style.backgroundRepeat = 'no-repeat';
